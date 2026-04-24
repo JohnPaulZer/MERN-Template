@@ -1,4 +1,4 @@
-# mern-template-jpz
+# MERN Template CLI tool
 
 `mern-template-jpz` is a CLI tool that creates a ready-to-use MERN starter project.
 
