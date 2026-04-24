@@ -4,7 +4,6 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const versions = {
-  concurrently: "^9.2.1",
   react: "^19.2.5",
   reactDom: "^19.2.5",
   reactTypes: "^19.2.14",
@@ -53,8 +52,14 @@ function main() {
   if (relativeTarget !== ".") {
     console.log("  cd " + relativeTarget);
   }
+  console.log("  cd backend");
   console.log("  npm install");
-  console.log("  Copy backend/.env.example to backend/.env and update it if needed");
+  console.log("  Copy .env.example to .env and update it if needed");
+  console.log("  npm run dev");
+  console.log("");
+  console.log("In another terminal:");
+  console.log("  cd " + path.join(relativeTarget, "frontend"));
+  console.log("  npm install");
   console.log("  npm run dev");
 }
 
@@ -160,24 +165,19 @@ function buildTemplate(projectName) {
   ];
 
   const files = {
-    "package.json": json({
-      name: projectName,
-      version: "0.1.0",
-      private: true,
-      workspaces: ["backend", "frontend"],
-      scripts: {
-        dev: 'concurrently "npm run dev --workspace backend" "npm run dev --workspace frontend"',
-        build: "npm run build --workspace backend && npm run build --workspace frontend",
-        start: "npm run start --workspace backend",
-      },
-      devDependencies: {
-        concurrently: versions.concurrently,
-      },
-      engines: {
-        node: ">=20.19.0",
-      },
-    }),
-    ".gitignore": lines([
+    "backend/.gitignore": lines([
+      "node_modules",
+      "dist",
+      ".env",
+      ".env.*",
+      "!.env.example",
+      "npm-debug.log*",
+      "yarn-debug.log*",
+      "yarn-error.log*",
+      "pnpm-debug.log*",
+      ".DS_Store",
+    ]),
+    "frontend/.gitignore": lines([
       "node_modules",
       "dist",
       ".env",
@@ -196,9 +196,20 @@ function buildTemplate(projectName) {
       "",
       "## Getting Started",
       "",
+      "Start the backend:",
+      "",
       "```bash",
+      "cd backend",
       "npm install",
-      "cp backend/.env.example backend/.env",
+      "cp .env.example .env",
+      "npm run dev",
+      "```",
+      "",
+      "Start the frontend in another terminal:",
+      "",
+      "```bash",
+      "cd frontend",
+      "npm install",
       "npm run dev",
       "```",
       "",

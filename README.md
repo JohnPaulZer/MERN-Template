@@ -45,25 +45,24 @@ Then open the new project:
 cd my-app
 ```
 
-Install dependencies:
+Install and start the backend:
 
 ```bash
+cd backend
 npm install
-```
-
-Create your backend environment file:
-
-```bash
-cp backend/.env.example backend/.env
-```
-
-Start the app:
-
-```bash
+cp .env.example .env
 npm run dev
 ```
 
-This starts both the backend and frontend together.
+Open another terminal, then install and start the frontend:
+
+```bash
+cd my-app/frontend
+npm install
+npm run dev
+```
+
+The backend and frontend have their own `package.json` files, so you run them from their own folders.
 
 The frontend will run at:
 
@@ -117,6 +116,8 @@ Use `npx` when you only want to run the CLI once. Use global install if you want
 
 ```text
 backend/
+  .gitignore
+  package.json
   src/
     controllers/
     db/
@@ -129,6 +130,8 @@ backend/
     index.ts
 
 frontend/
+  .gitignore
+  package.json
   src/
     api/
     assets/
