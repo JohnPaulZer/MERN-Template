@@ -19,3 +19,19 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Additional Notice
+
+This license applies to the mern-template-jpz CLI tool and the template files
+provided by this project.
+
+You may use this CLI tool to create personal, educational, open-source, or
+commercial MERN projects.
+
+Projects generated with this CLI are yours to use, modify, publish, and deploy.
+You may keep the MIT License in your generated project or replace it with a
+different license that fits your own project.
+
+Third-party dependencies installed in generated projects, such as React, Vite,
+Express, Tailwind CSS, Mongoose, Axios, and related packages, are covered by
+their own licenses.

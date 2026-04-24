@@ -145,3 +145,11 @@ frontend/
     index.css
     main.tsx
 ```
+
+## License
+
+This project is licensed under the MIT License.
+
+That means you can use, copy, modify, and share this CLI tool for personal or commercial projects.
+
+See the full license here: [LICENSE](LICENSE).
