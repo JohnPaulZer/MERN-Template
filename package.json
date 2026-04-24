@@ -4,8 +4,8 @@
   "description": "Scaffold a MERN TypeScript app with Vite, React, Tailwind CSS, Express, and MongoDB.",
   "main": "src/index.js",
   "bin": {
-    "mern-template-jpz": "./src/index.js",
-    "mern-template": "./src/index.js"
+    "mern-template-jpz": "src/index.js",
+    "mern-template": "src/index.js"
   },
   "scripts": {
     "start": "node src/index.js",
