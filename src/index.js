@@ -27,19 +27,14 @@ const versions = {
 };
 
 function main() {
-  const { target, force, help } = parseArgs(process.argv.slice(2));
+  const { target: parsedTarget, force, help } = parseArgs(process.argv.slice(2));
 
   if (help) {
     printHelp();
     return;
   }
 
-  if (!target) {
-    printHelp();
-    process.exitCode = 1;
-    return;
-  }
-
+  const target = parsedTarget || ".";
   const targetDir = path.resolve(process.cwd(), target);
   const projectName = packageNameFromTarget(targetDir, target);
   createProject(targetDir, projectName, force);
@@ -88,12 +83,19 @@ function printHelp() {
 mern-template-jpz
 
 Usage:
-  mern-template-jpz <project-name>
+  mern-template-jpz
+  mern-template-jpz [project-name]
   mern-template-jpz . --force
+
+Examples:
+  mern-template-jpz
+  mern-template-jpz my-app
 
 Options:
   -f, --force   Allow scaffolding into a non-empty directory
   -h, --help    Show this help message
+
+No project name means the template will be created in the current directory.
 `);
 }
 
