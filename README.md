@@ -145,7 +145,3 @@ frontend/
     index.css
     main.tsx
 ```
-
-## License
-
-MIT
