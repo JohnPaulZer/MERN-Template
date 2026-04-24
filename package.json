@@ -1,0 +1,32 @@
+{
+  "name": "mern-template-jpz",
+  "version": "1.0.0",
+  "description": "Scaffold a MERN TypeScript app with Vite, React, Tailwind CSS, Express, and MongoDB.",
+  "main": "src/index.js",
+  "bin": {
+    "mern-template-jpz": "./src/index.js",
+    "mern-template": "./src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node src/index.js --help"
+  },
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "cli",
+    "create",
+    "template",
+    "mern",
+    "typescript",
+    "vite",
+    "tailwindcss"
+  ],
+  "author": "JohnPaulZer",
+  "license": "MIT",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
