@@ -1,7 +1,7 @@
 {
   "name": "mern-template-jpz",
   "version": "1.0.4",
-  "description": "Scaffold a MERN TypeScript app with Vite, React, Tailwind CSS, Express, and MongoDB.",
+  "description": "Scaffold a MERN TypeScript authentication app with Vite, React, Tailwind CSS, Express, MongoDB, and JWT refresh-token rotation.",
   "main": "src/index.js",
   "bin": {
     "mern-template-jpz": "src/index.js",
@@ -9,16 +9,20 @@
   },
   "scripts": {
     "start": "node src/index.js",
-    "test": "node src/index.js --help"
+    "test": "node scripts/smoke-test.js"
   },
   "files": [
-    "src"
+    "scripts",
+    "src",
+    "template"
   ],
   "keywords": [
     "cli",
     "create",
     "template",
     "mern",
+    "auth",
+    "jwt",
     "typescript",
     "vite",
     "tailwindcss"
