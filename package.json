@@ -1,6 +1,6 @@
 {
   "name": "mern-template-jpz",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Scaffold a MERN TypeScript authentication app with Vite, React, Tailwind CSS, Express, MongoDB, and JWT refresh-token rotation.",
   "main": "src/index.js",
   "bin": {
