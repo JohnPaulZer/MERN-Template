@@ -2,11 +2,13 @@ const fs = require("node:fs");
 const os = require("node:os");
 const path = require("node:path");
 const { execFileSync } = require("node:child_process");
+const { ensureTemplate } = require("./ensure-template");
 
 const cliPath = path.resolve(__dirname, "..", "src", "index.js");
 const targetDir = fs.mkdtempSync(path.join(os.tmpdir(), "mern-template-jpz-"));
 
 try {
+  ensureTemplate();
   execFileSync(process.execPath, [cliPath, targetDir], { stdio: "inherit" });
 
   const expectedFiles = [

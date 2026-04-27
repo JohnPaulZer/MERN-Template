@@ -8,6 +8,8 @@
     "mern-template": "src/index.js"
   },
   "scripts": {
+    "prepare-template": "node scripts/ensure-template.js",
+    "prepack": "node scripts/ensure-template.js",
     "start": "node src/index.js",
     "test": "node scripts/smoke-test.js"
   },
