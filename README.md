@@ -2,7 +2,7 @@
 
 `mern-template-jpz` is a CLI tool that creates a ready-to-use MERN authentication starter.
 
-The generated app is based on the [`wesdevteam/mern-template`](https://github.com/wesdevteam/mern-template) project and includes a TypeScript/Express + MongoDB backend with secure access/refresh token authentication, plus a React/Vite frontend wired to the API.
+The generated app includes a TypeScript/Express + MongoDB backend with secure access/refresh token authentication, plus a React/Vite frontend wired to the API.
 
 ## What It Creates
 
