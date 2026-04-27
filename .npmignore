@@ -1,0 +1,5 @@
+.git
+.github
+.npmrc
+node_modules
+npm-debug.log*

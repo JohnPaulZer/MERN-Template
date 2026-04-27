@@ -1,33 +1,15 @@
 # MERN Template CLI tool
 
-`mern-template-jpz` is a CLI tool that creates a ready-to-use MERN starter project.
+`mern-template-jpz` is a CLI tool that creates a ready-to-use MERN authentication starter.
 
-Instead of manually creating the same folders and setup files every time you start a new MERN project, you can run one command and get a clean full-stack project structure.
-
-It generates a full-stack app with:
-
-- MongoDB
-- Express
-- React
-- Node.js
-- TypeScript
-- Vite
-- Tailwind CSS
-
-This template is useful if you want to start a MERN project quickly with TypeScript already configured for both the backend and frontend.
+The generated app is based on the [`wesdevteam/mern-template`](https://github.com/wesdevteam/mern-template) project and includes a TypeScript/Express + MongoDB backend with secure access/refresh token authentication, plus a React/Vite frontend wired to the API.
 
 ## What It Creates
 
-The CLI creates a project with two main folders:
+- `backend` - Express, MongoDB, Mongoose, TypeScript, JWT auth, httpOnly refresh cookies, session tracking, rate limiting, and security middleware
+- `frontend` - React, Vite, TypeScript, Tailwind CSS, React Router, Zustand, Axios, and auth pages
 
-- `backend` - Express, MongoDB, Mongoose, and TypeScript API
-- `frontend` - React, Vite, TypeScript, and Tailwind CSS app
-
-The backend includes a basic Express server, MongoDB connection setup, routes, controllers, services, middlewares, models, types, and utility files.
-
-The frontend includes a Vite React app with Tailwind CSS, Axios setup, routes, layouts, pages, components, stores, types, and utility files.
-
-It also includes a simple health-check example so the frontend can connect to the backend API.
+The scaffold includes registration, login, logout, token refresh, protected routing, and startup refresh handling.
 
 ## Quick Start
 
@@ -36,8 +18,6 @@ Create a new project folder:
 ```bash
 npx mern-template-jpz my-app
 ```
-
-`my-app` is the name of the folder that will be created. You can replace it with any project name you want.
 
 You can also run the CLI without a project name:
 
@@ -67,42 +47,18 @@ Open another terminal, then install and start the frontend:
 ```bash
 cd my-app/frontend
 npm install
+cp .env.example .env
 npm run dev
 ```
 
-The backend and frontend have their own `package.json` files, so you run them from their own folders.
-
-The frontend will run at:
-
-```text
-http://localhost:5173
-```
-
-The backend API will run at:
-
-```text
-http://localhost:5000
-```
+The frontend runs at `http://localhost:5173` by default. The backend API runs at the port configured in `backend/.env`.
 
 ## Using Global Install
 
-You can also install the CLI globally:
-
 ```bash
 npm install -g mern-template-jpz
-```
-
-The `-g` means global. This installs the CLI tool on your computer instead of inside one project folder.
-
-After global installation, npm makes the `mern-template-jpz` command available in your terminal. This means you can run the command from any folder without using `npx`.
-
-Then create a project with:
-
-```bash
 mern-template-jpz my-app
 ```
-
-This command creates a new folder called `my-app` and adds the MERN template files inside it.
 
 ## Command Format
 
@@ -110,28 +66,15 @@ This command creates a new folder called `my-app` and adds the MERN template fil
 npx mern-template-jpz [project-name]
 ```
 
-Examples:
+Options:
 
-```bash
-npx mern-template-jpz my-mern-project
-```
-
-```bash
-npx mern-template-jpz
-```
-
-If you add a project name, the CLI creates a folder with that name and puts the template files inside it.
-
-If you do not add a project name, the CLI creates the template in the folder where you run the command.
-
-Use `npx` when you only want to run the CLI once. Use global install if you want the command available on your computer all the time.
+- `-f, --force` - allow scaffolding into a non-empty directory
+- `-h, --help` - show help
 
 ## Generated Folder Structure
 
 ```text
 backend/
-  .gitignore
-  package.json
   src/
     controllers/
     db/
@@ -144,8 +87,6 @@ backend/
     index.ts
 
 frontend/
-  .gitignore
-  package.json
   src/
     api/
     assets/
@@ -165,8 +106,4 @@ frontend/
 
 ## License
 
-This project is licensed under the MIT License.
-
-That means you can use, copy, modify, and share this CLI tool for personal or commercial projects.
-
-See the full license here: [LICENSE](LICENSE).
+This CLI tool is licensed under the MIT License. See [LICENSE](LICENSE).
