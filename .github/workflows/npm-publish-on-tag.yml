@@ -8,8 +8,6 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    env:
-      MERN_TEMPLATE_REPO_URL: https://github.com/wesdevteam/mern-template.git
 
     permissions:
       contents: read
