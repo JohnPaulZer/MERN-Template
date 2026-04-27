@@ -4,12 +4,17 @@ const path = require("node:path");
 const { execFileSync } = require("node:child_process");
 
 const templateDir = path.resolve(__dirname, "..", "template");
-const templateRepoUrl =
-  process.env.MERN_TEMPLATE_REPO_URL;
+const templateRepoUrl = process.env.MERN_TEMPLATE_REPO_URL;
 
 function ensureTemplate() {
   if (hasTemplate()) {
     return;
+  }
+
+  if (!templateRepoUrl) {
+    throw new Error(
+      "Template directory is missing and MERN_TEMPLATE_REPO_URL is not set."
+    );
   }
 
   const cloneDir = fs.mkdtempSync(path.join(os.tmpdir(), "mern-template-source-"));
